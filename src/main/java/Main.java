@@ -5,7 +5,7 @@ import analyzer.printers.WarningPrinter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Analyzer {
+public class Main {
 
     public static void main(String[] args) throws Exception {
         String filePath =  "src/main/resources/demo.java";
