@@ -22,7 +22,7 @@ public class Analyzer extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
             throws IOException {
-        // initialize compilation unit
+        // initialize compilation unit ( AST Tree )
         CompilationUnit unit = JavaParser.parse(file.toFile());
 
         // collect all the stats
