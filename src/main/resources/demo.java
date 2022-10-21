@@ -16,12 +16,5 @@ public class SimpleProgram {
         if (x == 16) {
         }else if (x == 17) {
         }
-        if (x == 16) {
-        }
-        if (x == 16) {
-        } else if (x == 17) {
-        } else if (x == 18) {
-        } else if (x == 19) {
-        }  // Noncompliant
     }
 }
