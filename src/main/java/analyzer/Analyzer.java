@@ -1,6 +1,6 @@
 package analyzer;
 
-import analyzer.ast.InsertAst;
+import analyzer.ast.InsertAst_v1;
 import analyzer.collectors.Collector;
 import analyzer.visitors.*;
 import com.github.javaparser.JavaParser;
@@ -32,7 +32,7 @@ public class Analyzer extends SimpleFileVisitor<Path> {
         CompilationUnit unit = JavaParser.parse(file.toFile());
         try {
             Connection conn = ConnectionProvider.getConnection();
-            InsertAst.createStagingTable(conn);
+            InsertAst_v1.createStagingTable(conn);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
@@ -45,7 +45,6 @@ public class Analyzer extends SimpleFileVisitor<Path> {
             PrintWriter printWriter = new PrintWriter(fileWriter)) {
             printWriter.print(printer.output(unit));
         }
-
 
         // collect all the stats
         new BooleanMethodVisitor().visit(unit, collector);

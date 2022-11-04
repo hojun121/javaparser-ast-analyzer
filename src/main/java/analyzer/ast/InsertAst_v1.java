@@ -3,7 +3,7 @@ package analyzer.ast;
 import java.lang.*;
 import java.sql.*;
 
-public class InsertAst
+public class InsertAst_v1
 {
     public static void createStagingTable(Connection con)
     {
